@@ -1,0 +1,214 @@
+<html>
+<head>
+<script>
+// Created by Johan Bos // 
+i = 0;
+coins = 100;
+workers = 0;
+factory = 0;
+damnation = 0;
+function test(){
+i++;
+coins++;
+document.getElementById("coins").innerHTML = coins ;
+document.getElementById("score").innerHTML = i;
+
+if(i > 10 && i < 100)
+{
+document.getElementById("message").innerHTML = "You are right on Track";
+}
+else if(i > 100 && i < 500)
+{
+document.getElementById("message").innerHTML = "Are you done yet";
+}
+else if(i > 500 && i < 1000)
+{
+document.getElementById("message").innerHTML = "You should just stop now";
+}
+else if(i > 1000 && i < 999999999999999999)
+{
+document.getElementById("message").innerHTML = "You got no live";
+}
+}
+
+function buyworkers(){
+if(coins > 9)
+{
+	document.getElementById("buyingmessage").innerHTML = "You bought one worker";
+	workers++;
+	coins -= 10 ;
+}
+else 
+{
+ alert("you dont have enought cash");
+}
+
+document.getElementById("coins").innerHTML = coins;
+document.getElementById("workers").innerHTML = workers;
+
+}
+
+function buyfactory(){
+if(coins > 99)
+{
+	document.getElementById("buyingmessage").innerHTML = "You bought one factory";
+	factory++;
+	coins -= 100 ;
+}
+else 
+{
+ alert("you dont have enought cash");
+}
+
+document.getElementById("coins").innerHTML = coins;
+document.getElementById("factory").innerHTML = factory;
+
+}
+
+function buydamnation(){
+if(coins > 999)
+{
+	document.getElementById("buyingmessage").innerHTML = "You bought one damnation";
+	damnation++;
+	coins -= 1000 ;
+}
+else 
+{
+ alert("you dont have enought cash");
+}
+
+document.getElementById("coins").innerHTML = coins;
+document.getElementById("damnation").innerHTML = damnation;
+
+}
+
+setInterval(function() {
+      i += workers; 
+	  coins += workers; 
+	  document.getElementById("score").innerHTML = i;
+	  document.getElementById("coins").innerHTML = coins;
+	  
+	  if(i > 10 && i < 100)
+{
+document.getElementById("message").innerHTML = "You are right on Track";
+}
+else if(i > 100 && i < 500)
+{
+document.getElementById("message").innerHTML = "Are you done yet";
+}
+else if(i > 500 && i < 1000)
+{
+document.getElementById("message").innerHTML = "You should just stop now";
+}
+else if(i > 1000 && i < 999999999999999999)
+{
+document.getElementById("message").innerHTML = "You got no live";
+}
+}, 5000);
+
+setInterval(function() {
+	  i += factory; 
+	  coins += factory; 
+	  document.getElementById("score").innerHTML = i;
+	  document.getElementById("coins").innerHTML = coins;
+	  
+	  if(i > 10 && i < 100)
+{
+document.getElementById("message").innerHTML = "You are right on Track";
+}
+else if(i > 100 && i < 500)
+{
+document.getElementById("message").innerHTML = "Are you done yet";
+}
+else if(i > 500 && i < 1000)
+{
+document.getElementById("message").innerHTML = "You should just stop now";
+}
+else if(i > 1000 && i < 999999999999999999)
+{
+document.getElementById("message").innerHTML = "You got no live";
+}
+}, 3000);
+
+setInterval(function() {
+	  i += damnation; 
+	  coins += damnation; 
+	  document.getElementById("score").innerHTML = i;
+	  document.getElementById("coins").innerHTML = coins;
+	  if(i > 10 && i < 100)
+{
+document.getElementById("message").innerHTML = "You are right on Track";
+}
+else if(i > 100 && i < 500)
+{
+document.getElementById("message").innerHTML = "Are you done yet";
+}
+else if(i > 500 && i < 1000)
+{
+document.getElementById("message").innerHTML = "You should just stop now";
+}
+else if(i > 1000 && i < 999999999999999999)
+{
+document.getElementById("message").innerHTML = "You got no live";
+}
+}, 1000);
+
+</script>
+<style>
+.round-button {
+	width:25%;
+}
+.round-button-circle {
+	width: 100%;
+	height:0;
+	padding-bottom: 100%;
+    border-radius: 50%;
+	border:10px solid #cfdcec;
+    overflow:hidden;
+    
+    background: #4679BD; 
+    box-shadow: 0 0 3px gray;
+}
+.round-button-circle:hover {
+	background:#30588e;
+}
+.round-button a {
+    display:block;
+	float:left;
+	width:100%;
+	padding-top:50%;
+    padding-bottom:50%;
+	line-height:1em;
+	margin-top:-0.5em;
+    
+	text-align:center;
+	color:#e2eaf3;
+    font-family:Verdana;
+    font-size:1.2em;
+    font-weight:bold;
+    text-decoration:none;
+}
+</style>
+</head>
+
+<body>
+<h1>Just another click game created by Johan</h1>
+<br>
+<div class="round-button"><div class="round-button-circle" onclick="test()"><a class="round-button">Click here!!</a></div></div>
+<br>
+<h4><div id="message"></div></h4>
+<h4><div id="buyingmessage"></div></h4>
+<h4>Score:<div id="score">0</div></h4>
+<h4>Coins:<div id="coins">0</div></h4>
+<h1>Workers</h1>
+<button onclick="buyworkers()">Buy workers 10 coins</button>
+<h4>Workers:<div id="workers"></div></h4>
+<button onclick="buyfactory()">Buy factory 100 coins</button>
+<h4>Factory:<div id="factory"></div></h4>
+<button onclick="buydamnation()">Buy Damnation 1000 coins</button>
+<h4>Damnation:<div id="damnation"></div></h4>
+</body>
+
+
+
+</html>
